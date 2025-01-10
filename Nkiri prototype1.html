@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Nkiri P.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+            position: relative;
+        }
+
+        .navbar li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar li a:hover {
+            color: #00d4d4;
+        }
+
+        .navbar .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown li {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .dropdown li a {
+            color: white;
+        }
+
+        .dropdown li a:hover {
+            color: #00d4d4;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .film-container {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(150px, 1fr));
+            gap: 20px;
+            width: 100%;
+        }
+
+        .film {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .film:hover {
+            transform: translateY(-5px);
+        }
+
+        .film img {
+            width: 100%;
+            height: auto;
+        }
+
+        .film-info {
+            padding: 8px;
+            text-align: left;
+        }
+
+        .film-info h3 {
+            font-size: 0.7rem;
+            margin: 5px 0;
+            color: #333;
+        }
+
+        .film-info p {
+            color: #777;
+            font-size: 0.7rem;
+        }
+
+        .button {
+            display: block;
+            width: max-content;
+            margin: 20px ;
+            padding: 8px 16px;
+            background: hsl(180, 86%, 45%);
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+            width: 90%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .button:hover {
+            background: #007777;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 40px;
+            height: 50px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="#">Nkiri</a></div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Chinese Drama</a></li>
+            <li><a href="#">K Drama</a></li>
+            <li><a href="#">TV Series</a></li>
+            <li><a href="#">Movies</a>
+                <ul class="dropdown">
+                    <li><a href="#">International</a></li>
+                    <li><a href="#">Asian</a></li>
+                    <li><a href="#">Bollywood</a></li>
+                    <li><a href="#">Korean Movies</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Genre</a>
+                <ul class="dropdown">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Adventure</a></li>
+                    <li><a href="#">Animation</a></li>
+                    <li><a href="#">Biography</a></li>
+                    <li><a href="#">Comedy</a></li>
+                    <li><a href="#">Crime</a></li>
+                    <li><a href="#">Drama</a></li>
+                    <li><a href="#">Documentary</a></li>
+                    <li><a href="#">Fantasy</a></li>
+                    <li><a href="#">Family</a></li>
+                    <li><a href="#">Horror</a></li>
+                    <li><a href="#">Music</a></li>
+                    <li><a href="#">Mystery</a></li>
+                    <li><a href="#">Romance</a></li>
+                    <li><a href="#">Sci-fi</a></li>
+                </ul>
+            </li>
+            <li><a href="#">How to Download</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 class="section-title">Search for what to Download here</h2>
+        <form>
+            <input 
+                type="text" 
+                id="Search" 
+                name="Search" 
+                placeholder="Search Here"
+                style="width: 100%; padding: 10px; font-size: medium; box-sizing: border-box;">
+        </form>
+
+        <h2 class="section-title">New Drama Uploads</h2>
+        <div class="film-container">
+            <div class="film">
+                <img src="images/Iron_Family-tp01.jpg" alt="Iron Family">
+                <div class="film-info">
+                    <h3>Iron Family S01</h3>
+                    <p>(Episode 28 added) | Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/the tale of lady ok.jpg" alt="The Tale of Lady Ok">
+                <div class="film-info">
+                    <h3>The Tale of Lady Ok S01</h3>
+                    <p>(Episode 8 added) | Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/check in hanyang.jpg" alt="Check in Hanyang">
+                <div class="film-info">
+                    <h3>Check in Hanyang S01</h3>
+                    <p>(Episode 4 added) | Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/love your enemy.jpg" alt="Love Your Enemy">
+                <div class="film-info">
+                    <h3>Love Your Enemy S01</h3>
+                    <p>(Complete) | Korean Drama</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/when the phone rings.jpg" alt="when your phone rings">
+                <div class="film-info">
+                    <h3>When your phone rings S01</h3>
+                    <p>(Episode 10 added) | Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/the fiery priest.jpg" alt="The Fiery Priest">
+                <div class="film-info">
+                    <h3>The Fiery Priest S02</h3>
+                    <p>(Episode 12 added) | <br>
+                        Korean Drama</p>
+                </div>
+            </div>
+        </div><br>
+
+
+        <div class="film-container">
+            <div class="film">
+                <img src="images/family matters.jpg" alt="Family Matters S01">
+                <div class="film-info">
+                    <h3>Family Matters S01</h3>
+                    <p>(Episode 6 added) | <br>
+                        Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/squid game.jpg" alt="Squid game">
+                <div class="film-info">
+                    <h3>Squid game S02</h3>
+                    <p>(Complete) Korean <br> Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/good job.jpg" alt="Good Job S01">
+                <div class="film-info">
+                    <h3>Good Job S01</h3>
+                    <p>(Episode 12 added) | <br>
+                        Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/who is she.jpg" alt="Who is She S01">
+                <div class="film-info">
+                    <h3>Who is She S01</h3>
+                    <p>(Complete) | Korean Drama</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/sorry not sorry.jpg" alt="Sorry Not Sorry S01">
+                <div class="film-info">
+                    <h3>Sorry Not Sorry S01</h3>
+                    <p>(Episode 4 added) | <br>
+                        Korean Drama</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/namib.jpg" alt="Namib S01">
+                <div class="film-info">
+                    <h3>Namib S01</h3>
+                    <p>(Episode 12 added) | <br>
+                        Korean Drama</p>
+                </div>
+            </div>
+            </div>
+
+        <a href="#" class="button">Load More Drama</a>
+
+        <h2 class="section-title">New Movie Uploads</h2>
+        <div class="film-container">
+            <div class="film">
+                <img src="images/bonhoeffer.jpg" alt="Bonhoeffer">
+                <div class="film-info">
+                    <h3>Bonhoeffer</h3>
+                    <p>(2024) | Download Hollywood Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/night bitch.jpg" alt="Night Bitch">
+                <div class="film-info">
+                    <h3>Night Bitch</h3>
+                    <p>(2024) | Download Hollywood Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/your fault.jpg" alt="Your Fault">
+                <div class="film-info">
+                    <h3>Your Fault</h3>
+                    <p>(2024) | Download Hollywood Movie</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/the return.jpg" alt="The Return">
+                <div class="film-info">
+                    <h3>The Return (2024)</h3>
+                    <p>Download Hollywood <br>
+                        Movie</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/white snake.jpg" alt="White Snake: Afloat">
+                <div class="film-info">
+                    <h3>White Snake: Afloat</h3>
+                    <p>(2024) | Download Chinese Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/lord of the rings.jpg" alt="The Lord of the Rings">
+                <div class="film-info">
+                    <h3>The Lord of the Rings:</h3>
+                    <p>The War of Rohirrim (2024) | <br>
+                        Download Hollywood Movie</p>
+                </div>
+            </div>
+        </div><br>
+
+
+        <div class="film-container">
+            <div class="film">
+                <img src="images/bad tidings.jpg" alt="Bad Tidings (2024)">
+                <div class="film-info">
+                    <h3>Bad Tidings (2024)</h3>
+                    <p>Download Hollywood Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/y2k.jpg" alt="Y2K (2024)">
+                <div class="film-info">
+                    <h3>Y2K (2024) |</h3>
+                    <p>Hollywood Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/werewolves.jpg" alt="Werewolves (2024)">
+                <div class="film-info">
+                    <h3>Werewolves (2024) |</h3>
+                    <p>Download Hollywood | <br>
+                        Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/a carpenter chrismas.jpg" alt="A Carpenter Christmas">
+                <div class="film-info">
+                    <h3>A Carpenter Christmas</h3>
+                    <p>Romance (2024) | <br>
+                        Download Hollywood Movie</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/bird.jpg" alt="Bird (2024)">
+                <div class="film-info">
+                    <h3>Bird (2024)</h3>
+                    <p>Download Hollywood Movie</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/the order.jpg" alt="The Order (2024)">
+                <div class="film-info">
+                    <h3>The Order (2024) |</h3>
+                    <p>Download Hollywood Movie</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="button">Load More Movies</a>
+    </div>
+
+    <div class="content">
+        <h2 class="section-title">New Series Uploads</h2>
+        <div class="film-container">
+            <div class="film">
+                <img src="images/landman.jpg" alt="Landman">
+                <div class="film-info">
+                    <h3>Landman S01</h3>
+                    <p>(Episode 8 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/what if.jpg" alt="What If S03">
+                <div class="film-info">
+                    <h3>What If S03</h3>
+                    <p>(Complete) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/dexter.jpg" alt="Dexter Original Sin S01">
+                <div class="film-info">
+                    <h3>Dexter Original Sin S01</h3>
+                    <p>(Episode 4 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/creature commandos.jpg" alt="Creature Commandos S01">
+                <div class="film-info">
+                    <h3>Creature Commandos S01</h3>
+                    <p>(Episode 5 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/the sex life.jpg" alt="The Sex lives of College">
+                <div class="film-info">
+                    <h3>The Sex lives of College</h3>
+                    <p>Girls S03 (Episode  <br>
+                        6 added) |TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/the agency.jpg" alt="The Agency S01">
+                <div class="film-info">
+                    <h3>The Agency S01</h3>
+                    <p>(Episode 6 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+        </div><br>
+
+
+        <div class="film-container">
+            <div class="film">
+                <img src="images/Silo.jpg" alt="Silo S02">
+                <div class="film-info">
+                    <h3>Silo S02</h3>
+                    <p>(Episode 7 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/bookie.jpg" alt="Bookie S02">
+                <div class="film-info">
+                    <h3>Bookie S02</h3>
+                    <p>(Episode 3 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/doctor who.jpg" alt="Doctor Who ">
+                <div class="film-info">
+                    <h3>Doctor Who (2024) S01</h3>
+                    <p>(New episode added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/no good deed.jpg" alt="No Good Deed ">
+                <div class="film-info">
+                    <h3>No Good Deed S01</h3>
+                    <p>(Complete) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+
+            <div class="film">
+                <img src="images/raw.png" alt="WWE Monday Night Raw">
+                <div class="film-info">
+                    <h3>WWE Monday Night Raw</h3>
+                    <p>(New Episode added) | <br>
+                        Wrestling Series</p>
+                </div>
+            </div>
+            <div class="film">
+                <img src="images/star wars.jpg" alt="Star Wars Skeleton Crew">
+                <div class="film-info">
+                    <h3>Star Wars Skeleton Crew</h3>
+                    <p>S01 (Episode 5 added) | <br>
+                        TV Series</p>
+                </div>
+            </div>
+            </div>
+            <a href="#" class="button">Load More Series</a>
+</div>
+    <footer>
+        &copy; 2025 Nkiri P. All rights reserved.
+    </footer>
+</body>
+</html>
